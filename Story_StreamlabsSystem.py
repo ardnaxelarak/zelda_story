@@ -26,7 +26,7 @@ def Init():
             settings = json.load(file, encoding='utf-8-sig')
     except:
         settings = {
-            "liveOnly": True,
+            "liveOnly": False,
             "command": "!story",
             "permission": "Everyone",
             "useCooldown": True,

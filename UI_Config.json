@@ -3,7 +3,7 @@
 
     "liveOnly": {
         "type": "checkbox",
-        "value": true,
+        "value": false,
         "label": "Live Only Mode",
         "tooltip": "Whether to only run while live",
         "group" : "General"
