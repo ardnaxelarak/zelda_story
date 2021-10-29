@@ -1,4 +1,12 @@
-import random, re, yaml
+import json, os, random
+
+try:
+    import clr
+    clr.AddReference("IronPython.Modules.dll")
+except:
+    pass
+
+import re
 
 reference = re.compile(r"\[\[((?:[^\]]|(?:\](?!\])))*)\]\]")
 
@@ -12,8 +20,8 @@ def resolve_recursive(data, key):
             values += [entry]
     return values
 
-with open("config.yml", "r") as stream:
-    config = yaml.safe_load(stream)
+with open(os.path.join(os.path.dirname(__file__), "data.json"), mode='r') as file:
+    config = json.load(file)
 
 data = {}
 for key in config['data']:
