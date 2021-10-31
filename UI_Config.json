@@ -40,13 +40,13 @@
     "cooldown": {
         "type": "numberbox",
         "label": "Cooldown (seconds)",
-        "value": 1,
+        "value": 60,
         "tooltip": "Cooldown in seconds.",
         "group": "Cooldown"
     },
     "onCooldown": {
         "type": "textbox",
-        "value": "$user, $command is still on cooldown for $cd seconds!",
+        "value": "$user -> Ki ki! Harumph! I have no reason to talk to you; $command is on cooldown for $cd seconds!",
         "label": "Cooldown Response",
         "tooltip": "The message that the bot will display when the command is on cooldown.\r\n$user = user\r\n$command = command name\r\n$cd = time remaining",
         "group": "Cooldown"
@@ -60,7 +60,7 @@
     },
     "onUserCooldown": {
         "type": "textbox",
-        "value": "$user, $command is still on user cooldown for $cd seconds!",
+        "value": "$user -> Ki ki! Harumph! I have no reason to talk to you; $command is on user cooldown for $cd seconds!",
         "label": "User Cooldown Response",
         "tooltip": "The message that the bot will display when the command is on user cooldown.\r\n$user = user\r\n$command = command name\r\n$cd = time remaining",
         "group": "Cooldown"
