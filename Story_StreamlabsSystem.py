@@ -1,7 +1,10 @@
 import codecs
 import json
 import os
-from . import story
+import sys
+
+sys.path.append(os.path.dirname(__file__))
+from story import generate
 
 ScriptName = "Zelda Storyteller"
 Website = "http://www.github.com/ardnaxelarak/zelda_story"
@@ -11,7 +14,6 @@ Version = "1.0.0"
 
 configFile = "config.json"
 settings = {}
-reference = re.compile(r"\[\[((?:[^\]]|(?:\](?!\])))*)\]\]")
 
 def ScriptToggled(state):
     return
@@ -50,7 +52,7 @@ def Execute(data):
                 else:
                     cd = Parent.GetUserCooldownDuration(ScriptName, settings["command"], userId)
                     outputMessage = settings["onUserCooldown"]
-                outputMessage = outputMessage.replace("$cd", cd)
+                outputMessage = outputMessage.replace("$cd", str(cd))
             else:
                 outputMessage = ""
         else:
